@@ -1,0 +1,89 @@
+{
+  "profile": {
+    "sex": "Nữ",
+    "age": 20,
+    "height": 170.0,
+    "weight": 70.0,
+    "activity": 1.375,
+    "rate": 0.25,
+    "goal_weight": 60.0
+  },
+  "pantry": [
+    "Carrot",
+    "Potato"
+  ],
+  "menus": {
+    "2026-11-11": [
+      {
+        "id": "08f2a437",
+        "meal": "Bữa sáng",
+        "name": "Đĩa rau củ: cà rốt, khoai tây",
+        "portions": 1.0,
+        "kcal": 59.0,
+        "protein": 1.4,
+        "carbs": 13.6,
+        "fat": 0.2
+      },
+      {
+        "id": "aa6439e9",
+        "meal": "Bữa trưa",
+        "name": "Canh cà rốt khoai tây",
+        "portions": 1.0,
+        "kcal": 88.5,
+        "protein": 2.2,
+        "carbs": 20.3,
+        "fat": 0.2
+      },
+      {
+        "id": "b2de4633",
+        "meal": "Bữa trưa",
+        "name": "Khoai tây và cà rốt nướng",
+        "portions": 1.0,
+        "kcal": 110.6,
+        "protein": 2.2,
+        "carbs": 20.3,
+        "fat": 2.7
+      },
+      {
+        "id": "b1b76ce1",
+        "meal": "Bữa tối",
+        "name": "Đĩa rau củ: khoai tây",
+        "portions": 1.0,
+        "kcal": 38.5,
+        "protein": 1.0,
+        "carbs": 8.8,
+        "fat": 0.1
+      }
+    ],
+    "2026-11-12": [
+      {
+        "id": "006cebeb",
+        "meal": "Bữa sáng",
+        "name": "Khoai tây cà rốt luộc chấm muối tiêu chanh",
+        "portions": 1.0,
+        "kcal": 116.8,
+        "protein": 3.0,
+        "carbs": 26.7,
+        "fat": 0.2
+      }
+    ],
+    "2026-11-14": [
+      {
+        "id": "c728aa68",
+        "meal": "Bữa sáng",
+        "name": "Khoai tây cà rốt luộc chấm muối tiêu chanh",
+        "portions": 1.0,
+        "kcal": 116.8,
+        "protein": 3.0,
+        "carbs": 26.7,
+        "fat": 0.2
+      }
+    ]
+  },
+  "weights": [
+    {
+      "date": "2026-11-11",
+      "kg": 70.0
+    }
+  ]
+}

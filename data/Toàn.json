@@ -1,0 +1,131 @@
+{
+  "profile": {
+    "sex": "Nam",
+    "age": 19,
+    "height": 170.0,
+    "weight": 70.0,
+    "activity": 1.55,
+    "rate": 0.25,
+    "goal_weight": 55.0
+  },
+  "pantry": [
+    "Potato",
+    "Carrot"
+  ],
+  "menus": {
+    "2026-11-12": [
+      {
+        "id": "2a1580ac",
+        "meal": "Bữa sáng",
+        "name": "Khoai tây cà rốt luộc chấm muối tiêu chanh",
+        "portions": 1.0,
+        "kcal": 116.8,
+        "protein": 3.0,
+        "carbs": 26.7,
+        "fat": 0.2
+      },
+      {
+        "id": "d7b6179f",
+        "meal": "Bữa trưa",
+        "name": "Khoai tây cà rốt hầm tiêu",
+        "portions": 1.0,
+        "kcal": 120.8,
+        "protein": 3.0,
+        "carbs": 27.6,
+        "fat": 0.2
+      },
+      {
+        "id": "03f2d840",
+        "meal": "Bữa sáng",
+        "name": "Khoai tây cà rốt áp chảo",
+        "portions": 1.0,
+        "kcal": 152.1,
+        "protein": 3.0,
+        "carbs": 26.7,
+        "fat": 4.2
+      },
+      {
+        "id": "dd75ff29",
+        "meal": "Bữa trưa",
+        "name": "Khoai tây lát nướng giòn",
+        "portions": 1.0,
+        "kcal": 150.9,
+        "protein": 3.0,
+        "carbs": 26.2,
+        "fat": 4.2
+      },
+      {
+        "id": "38dd0667",
+        "meal": "Bữa tối",
+        "name": "Khoai tây cà rốt nghiền",
+        "portions": 1.0,
+        "kcal": 138.8,
+        "protein": 3.0,
+        "carbs": 26.7,
+        "fat": 2.7
+      }
+    ],
+    "2026-11-14": [
+      {
+        "id": "b053f819",
+        "meal": "Bữa sáng",
+        "name": "Khoai tây cà rốt luộc chấm muối tiêu chanh",
+        "portions": 1.0,
+        "kcal": 116.8,
+        "protein": 3.0,
+        "carbs": 26.7,
+        "fat": 0.2
+      },
+      {
+        "id": "ef6854f0",
+        "meal": "Bữa trưa",
+        "name": "Salad khoai tây cà rốt trộn chanh",
+        "portions": 1.0,
+        "kcal": 119.6,
+        "protein": 2.5,
+        "carbs": 22.3,
+        "fat": 2.7
+      },
+      {
+        "id": "41e182cb",
+        "meal": "Bữa sáng",
+        "name": "Súp khoai tây cà rốt xay",
+        "portions": 1.0,
+        "kcal": 119.6,
+        "protein": 2.5,
+        "carbs": 22.3,
+        "fat": 2.7
+      },
+      {
+        "id": "c85e611c",
+        "meal": "Bữa trưa",
+        "name": "Cà rốt xào tỏi",
+        "portions": 1.0,
+        "kcal": 73.3,
+        "protein": 1.1,
+        "carbs": 12.0,
+        "fat": 2.8
+      },
+      {
+        "id": "261a46b7",
+        "meal": "Bữa tối",
+        "name": "Khoai tây xào tỏi ớt",
+        "portions": 1.0,
+        "kcal": 118.3,
+        "protein": 2.5,
+        "carbs": 21.9,
+        "fat": 2.6
+      }
+    ]
+  },
+  "weights": [
+    {
+      "date": "2026-11-12",
+      "kg": 70.0
+    },
+    {
+      "date": "2026-11-14",
+      "kg": 70.0
+    }
+  ]
+}

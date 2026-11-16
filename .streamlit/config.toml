@@ -1,0 +1,18 @@
+[theme]
+base = "light"
+primaryColor = "#49632E"
+backgroundColor = "#F8FAF4"
+secondaryBackgroundColor = "#EAF1DF"
+textColor = "#273423"
+linkColor = "#49632E"
+borderColor = "#D3DFC5"
+dataframeHeaderBackgroundColor = "#EAF1DF"
+chartCategoricalColors = ["#547735", "#A2CA6C", "#739553"]
+baseRadius = "0.75rem"
+buttonRadius = "0.75rem"
+showWidgetBorder = true
+showSidebarBorder = true
+
+[theme.sidebar]
+backgroundColor = "#EAF1DF"
+secondaryBackgroundColor = "#F8FAF4"
