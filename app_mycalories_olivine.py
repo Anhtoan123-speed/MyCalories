@@ -31,6 +31,8 @@ import tensorflow as tf
 from PIL import Image, ImageOps, UnidentifiedImageError
 from tensorflow import keras
 
+from preprocess import to_model_array, predict_tta
+
 # Gộp công thức, bỏ món trùng tên
 RECIPES, _seen_names = [], set()
 for _recipe in [*EXTRA_RECIPES]:
@@ -61,8 +63,8 @@ YOLO_LABELS = {
     "tomato": "Tomato",
 }
 
-IMAGE_SIZE = (128, 128)  # phải khớp với train.py
-CONFIDENCE_OK = 0.60     # dưới mức này thì cảnh báo "chưa chắc chắn"
+CONFIDENCE_OK = 0.70     # dưới mức này thì cảnh báo "chưa chắc chắn"
+MIN_MARGIN = 0.20        # hạng 1 phải hơn hạng 2 ít nhất mức này
 MEALS = ("Bữa sáng", "Bữa trưa", "Bữa tối", "Bữa phụ")
 MAIN_MEAL_SHARE = {"Bữa sáng": 0.30, "Bữa trưa": 0.40, "Bữa tối": 0.30}
 
@@ -584,6 +586,18 @@ def load_resources():
     return model, names
 
 
+OLD_MODEL_FILE = OUTPUT / "best_model_old.keras"
+
+
+@st.cache_resource(show_spinner=False)
+def load_old_model():
+    if OLD_MODEL_FILE.is_file():
+        try:
+            return keras.models.load_model(str(OLD_MODEL_FILE))
+        except Exception:
+            return None
+    return None
+
 def load_image(raw: bytes) -> Image.Image:
     return ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")
 
@@ -591,15 +605,10 @@ def load_image(raw: bytes) -> Image.Image:
 @st.cache_data(show_spinner=False, max_entries=128)
 def predict_scores(raw: bytes) -> list:
     model, _ = load_resources()
-    image = load_image(raw)
-
-    array = tf.image.resize(
-        np.asarray(image, dtype="float32"),
-        IMAGE_SIZE,
-        method="bilinear",
-    ).numpy()
-
-    return model.predict(array[None, ...], verbose=0)[0].tolist()
+    old = load_old_model()
+    models = [model] + ([old] if old else [])
+    weights = [0.7, 0.3][:len(models)]
+    return predict_tta(models, Image.open(io.BytesIO(raw)), weights).tolist()
 
 
 @st.cache_resource(show_spinner="Đang nạp mô hình YOLO...")
@@ -916,7 +925,7 @@ with tab_detect:
             right.markdown(f"**Dự đoán: {vi(class_names[best])}** ({scores[best]:.0%})")
             right.caption("Top 3: " + " · ".join(
                 f"{vi(class_names[i])} {scores[i]:.0%}" for i in order))
-            if scores[best] < CONFIDENCE_OK:
+            if scores[best] < CONFIDENCE_OK or scores[best] - scores[order[1]] < MIN_MARGIN:
                 right.warning("Mô hình chưa chắc chắn. Có thể đây không phải loại rau củ mô hình đã học, "
                               "hãy kiểm tra và chọn lại bên dưới.")
             fix_key = f"fix_cnn_{image_key}"
