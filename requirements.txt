@@ -2,5 +2,5 @@ streamlit
 numpy
 pandas
 Pillow
-tensorflow-cpu
+tensorflow-cpu>=2.20,<2.22
 ultralytics
